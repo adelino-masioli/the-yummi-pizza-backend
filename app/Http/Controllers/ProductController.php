@@ -13,4 +13,9 @@ class ProductController extends Controller
     {
         return ProductResource::collection(Product::all());
     }
+
+    public static function show($id)
+    {
+        return new ProductResource(Product::find($id));
+    }
 }

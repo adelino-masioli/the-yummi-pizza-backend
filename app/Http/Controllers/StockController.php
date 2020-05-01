@@ -10,7 +10,7 @@ use App\ProductStock;
 
 class StockController extends Controller
 {
-    public static function index($id)
+    public static function show($id)
     {
         return ProductStockResource::collection(Product::find($id)->stock);
     }
