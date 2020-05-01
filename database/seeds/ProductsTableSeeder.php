@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 
+use App\Product;
+
 class ProductsTableSeeder extends Seeder
 {
     /**
@@ -13,47 +15,50 @@ class ProductsTableSeeder extends Seeder
     {
         $products = [
               [
-                "id"        => 1,
-                "title"     => "10' pizza, regular fries and Regular Drink",
-                "price_eur" => 10.88,
-                "price_dol" => 10.0,
-                "image"     => "https =>//api.supermacs.ie//uploads/products/157/Meal%20A.png"
+                "title"       => "10' pizza",
+                "description" => "10' pizza, regular fries and Regular Drink",
+                "image"       => "https =>//api.supermacs.ie//uploads/products/157/Meal%20A.png",
+                "created_at"  => date('Y-m-d H:i:s'),
+                "updated_at"  => date('Y-m-d H:i:s')
               ],
               [
-                "id"        => 2,
-                "title"     => "14' pizza, 3 regular fries & 3 drinks",
-                "price_eur" => 14.14,
-                "price_dol" => 13.0,
-                "image"     => "https =>//api.supermacs.ie//uploads/products/156/Meal%20C.png"
+                "title"       => "14' pizza",
+                "description" => "14' pizza, 3 regular fries & 3 drinks",
+                "image"       => "https =>//api.supermacs.ie//uploads/products/156/Meal%20C.png",
+                "created_at"  => date('Y-m-d H:i:s'),
+                "updated_at"  => date('Y-m-d H:i:s')
               ],
               [
-                "id"        => 3,
-                "title"     => "Any 2 large pizza's. Choose from Classic, Finest or Create Your Own (up to 4 toppings)",
-                "price_eur" => 16.32,
-                "price_dol" => 15.0,
-                "image"     => "https =>//api.supermacs.ie//uploads/products/228/double%20deal%201.png"
+                "title"       => "Any 2 large pizza's",
+                "description" => "Any 2 large pizza's. Choose from Classic, Finest or Create Your Own (up to 4 toppings)",
+                "image"       => "https =>//api.supermacs.ie//uploads/products/228/double%20deal%201.png",
+                "created_at"  => date('Y-m-d H:i:s'),
+                "updated_at"  => date('Y-m-d H:i:s')
               ],
               [
-                "id"        => 4,
-                "title"     => "14' Pizza, 1.25 litre Drink, 3 Regular Fries, 8 Chicken Nuggets or Garlic Bread",
-                "price_eur" => 19.58,
-                "price_dol" => 18.0,
-                "image"     => "https =>//api.supermacs.ie//uploads/products/163/Meal%20D.png"
+                "title"       => "14' Pizza",
+                "description" => "14' Pizza, 1.25 litre Drink, 3 Regular Fries, 8 Chicken Nuggets or Garlic Bread",
+                "image"       => "https =>//api.supermacs.ie//uploads/products/163/Meal%20D.png",
+                "created_at"  => date('Y-m-d H:i:s'),
+                "updated_at"  => date('Y-m-d H:i:s')
               ],
               [
-                "id"        => 5,
-                "title"     => "14' Pizza and Chicken Piece Deal",
-                "price_eur" => 21.76,
-                "price_dol" => 20.0,
-                "image"     => "https =>//api.supermacs.ie//uploads/products/138/14Inch%20Pizza%20&%20Chicken%20piece%20Deal.png"
+                "title"       => "14' Pizza",
+                "description" => "14' Pizza and Chicken Piece Deal",
+                "image"       => "https =>//api.supermacs.ie//uploads/products/138/14Inch%20Pizza%20&%20Chicken%20piece%20Deal.png",
+                "created_at"  => date('Y-m-d H:i:s'),
+                "updated_at"  => date('Y-m-d H:i:s')
               ],
               [
-                "id"        => 6,
-                "title"     => "14' Pizza, 2 Regular Fries OR 1 Wedges, 2 Regular Drinks and 4 Cookies.",
-                "price_eur" => 23.93,
-                "price_dol" => 22.0,
-                "image"     => "https =>//api.supermacs.ie//uploads/products/586/Festive%20Feast%20Online%20Thumbnail.png"
+                "title"       => "14' Pizza",
+                "description" => "14' Pizza, 2 Regular Fries OR 1 Wedges, 2 Regular Drinks and 4 Cookies.",
+                "image"       => "https =>//api.supermacs.ie//uploads/products/586/Festive%20Feast%20Online%20Thumbnail.png",
+                "created_at"  => date('Y-m-d H:i:s'),
+                "updated_at"  => date('Y-m-d H:i:s')
               ]
-        ]
+              ];
+
+              DB::table('products')->delete();
+              Product::insert($products);
     }
 }
