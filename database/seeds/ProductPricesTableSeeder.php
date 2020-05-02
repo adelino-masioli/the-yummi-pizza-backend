@@ -26,6 +26,10 @@ class ProductPricesTableSeeder extends Seeder
                 ["product_id"  => 5, "type" => 'dolar', "symbol"=>'$', "price" => 17.88, "created_at" => date('Y-m-d H:i:s'), "updated_at" => date('Y-m-d H:i:s')],
                 ["product_id"  => 6, "type" => 'euro',  "symbol"=>'€', "price" => 20.88, "created_at" => date('Y-m-d H:i:s'), "updated_at" => date('Y-m-d H:i:s')],
                 ["product_id"  => 6, "type" => 'dolar', "symbol"=>'$', "price" => 20.00, "created_at" => date('Y-m-d H:i:s'), "updated_at" => date('Y-m-d H:i:s')],
+                ["product_id"  => 7, "type" => 'euro',  "symbol"=>'€', "price" => 22.88, "created_at" => date('Y-m-d H:i:s'), "updated_at" => date('Y-m-d H:i:s')],
+                ["product_id"  => 7, "type" => 'dolar', "symbol"=>'$', "price" => 22.00, "created_at" => date('Y-m-d H:i:s'), "updated_at" => date('Y-m-d H:i:s')],
+                ["product_id"  => 8, "type" => 'euro',  "symbol"=>'€', "price" => 25.88, "created_at" => date('Y-m-d H:i:s'), "updated_at" => date('Y-m-d H:i:s')],
+                ["product_id"  => 8, "type" => 'dolar', "symbol"=>'$', "price" => 25.00, "created_at" => date('Y-m-d H:i:s'), "updated_at" => date('Y-m-d H:i:s')],
             ];
 
         DB::table('product_prices')->delete();

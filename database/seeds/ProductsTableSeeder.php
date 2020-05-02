@@ -55,6 +55,20 @@ class ProductsTableSeeder extends Seeder
                 "image"       => "https://api.supermacs.ie//uploads/products/586/Festive%20Feast%20Online%20Thumbnail.png",
                 "created_at"  => date('Y-m-d H:i:s'),
                 "updated_at"  => date('Y-m-d H:i:s')
+              ],
+              [
+                "title"       => "15' Pizza",
+                "description" => "15' Pizza, 2 Regular Fries OR 1 Wedges, 2 Regular Drinks and 4 Cookies.",
+                "image"       => "https://api.supermacs.ie//uploads/products/586/Festive%20Feast%20Online%20Thumbnail.png",
+                "created_at"  => date('Y-m-d H:i:s'),
+                "updated_at"  => date('Y-m-d H:i:s')
+              ],
+              [
+                "title"       => "16' Pizza",
+                "description" => "16' Pizza, 2 Regular Fries OR 1 Wedges, 2 Regular Drinks and 4 Cookies.",
+                "image"       => "https://api.supermacs.ie//uploads/products/586/Festive%20Feast%20Online%20Thumbnail.png",
+                "created_at"  => date('Y-m-d H:i:s'),
+                "updated_at"  => date('Y-m-d H:i:s')
               ]
               ];
 

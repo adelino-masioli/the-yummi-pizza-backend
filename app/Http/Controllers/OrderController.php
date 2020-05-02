@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Http\Resources\Order as OrderResource;
 use App\User;
 use App\Order;
 use App\OrderItem;
@@ -11,6 +12,15 @@ use Illuminate\Support\Facades\Hash;
 
 class OrderController extends Controller
 {
+    public function index()
+    {
+        return OrderResource::collection(Order::all());
+        //$order = Order::with('items')->get();
+
+        //return $order;
+    }
+
+
     public function store(Request $request)
     {
         try{
@@ -26,9 +36,9 @@ class OrderController extends Controller
             }
 
             $order =  Order::create([
-                'user_id' => $user->id
+                'user_id' => $user->id,
+                'status'  => 'Created',
             ]);
-
 
             //dispatch store items
             Self::createItems($request[1], $order);
