@@ -12,12 +12,11 @@ use Illuminate\Support\Facades\Hash;
 
 class OrderController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return OrderResource::collection(Order::all());
-        //$order = Order::with('items')->get();
-
-        //return $order;
+        $user = User::where('auth_token', $request->token)->first();
+        $orders = Order::where('user_id', $user->id)->get();
+        return OrderResource::collection($orders);
     }
 
 
@@ -29,9 +28,13 @@ class OrderController extends Controller
                 $user =  $user_exist->first();
             }else{
                 $user =  User::create([
-                    'name'     => $request[0]['name'],
-                    'email'    => $request[0]['email'],
-                    'password' => Hash::make('12345'),
+                    'name'        => $request[0]['name'],
+                    'email'       => $request[0]['email'],
+                    'phonenumber' => $request[0]['phonenumber'],
+                    'zipcode'     => $request[0]['zipcode'],
+                    'city'        => $request[0]['city'],
+                    'address'     => $request[0]['address'],
+                    'password'    => Hash::make('123456'),
                 ]);
             }
 
@@ -43,9 +46,9 @@ class OrderController extends Controller
             //dispatch store items
             Self::createItems($request[1], $order);
 
-            return json_encode(['msg' => 'Registered successful']);
+            return response()->json(['msg' => 'Registered successful'], 201);
         }catch(\Exception $e){
-            return json_encode(['error'=> 'Error when trying to register the order']);
+            return json_encode(['error'=> 'Error while trying to register the order']);
         }
     }
 

@@ -22,6 +22,20 @@ Route::group(['middleware' => 'api'], function(){
     Route::resource('stock', 'StockController')->parameters([
         'stock' => 'id'
     ]);
-    Route::resource('orders', 'OrderController');
+
+    Route::resource('orders', 'OrderController')->only([
+        'store'
+    ]);
+
+    Route::post('login', 'UserController@login');
+    Route::post('user/register', 'UserController@register');
 });
+
+
+Route::group(['middleware' => ['jwt.auth','api-header']], function () {
+    Route::resource('orders', 'OrderController')->except([
+        'store'
+    ]);
+});
+
 
