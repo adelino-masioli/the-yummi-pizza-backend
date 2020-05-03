@@ -56,6 +56,6 @@ NodeJS
 
 # Below are some prints of the application pages
 
-![Login Page](/public/images/1.png)
-![Login Page](/public/images/2.png)
-![Login Page](/public/images/3.png)
+![Login Page](/public/assets/images/1.png)
+![Login Page](/public/assets/images/2.png)
+![Login Page](/public/assets/images/3.png)
