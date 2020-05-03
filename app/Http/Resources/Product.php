@@ -20,7 +20,7 @@ class Product extends JsonResource
             'id'          => $this->id,
             'title'       => $this->title,
             'description' => $this->description,
-            'image'       => $this->image,
+            'image'       => asset('assets/images/products/'.$this->image),
             'prices'      => ProductPrice::collection($this->prices)
         ];
     }

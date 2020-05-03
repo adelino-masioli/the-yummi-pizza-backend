@@ -15,7 +15,7 @@ class OrderTest extends TestCase
         $this->assertTrue(true);
     }
 
-    public function testGetAllOrdersNoAuthorization()
+    public function testGetAllOrdersUnauthorized()
     {
         $response = $this->json('GET', '/api/orders');
         $response->assertStatus(401);
