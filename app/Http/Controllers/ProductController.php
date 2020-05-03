@@ -11,7 +11,8 @@ class ProductController extends Controller
 {
     public static function index()
     {
-        return ProductResource::collection(Product::all());
+        $collection =  ProductResource::collection(Product::all());
+        return $collection;
     }
 
     public static function show($id)
